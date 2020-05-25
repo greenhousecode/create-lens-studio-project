@@ -1,5 +1,5 @@
 const os = require('os');
-const { prompt } = require('inquirer');
+const { prompt, Separator } = require('inquirer');
 const { join } = require('path');
 const chalk = require('chalk');
 
@@ -62,8 +62,16 @@ module.exports = async (input) => {
       message: 'Which modules would you like to in?',
       when: ({ includeCommonlyUsedCode }) => includeCommonlyUsedCode,
       choices: [
-        { name: 'State Machine', value: 'StateMachine' },
-        { name: 'console', value: 'console' },
+        new Separator('----- Classes -----'),
+        { name: 'Button', value: 'button' },
+        { name: 'Audio Manager (for managing audio Assets)', value: 'audioManager' },
+        { name: 'Texture Manager (for managing texture Assets)', value: 'textureManager' },
+        { name: 'Prefab Manager (for managing prefab Assets)', value: 'prefabManager' },
+        { name: 'State Machine (for complex, multi staged lenses)', value: 'stateMachine' },
+        new Separator('----- Helpers -----'),
+        { name: 'console (for logging stuff)', value: 'console' },
+        { name: 'duplicator (clone scene objects or prefabs)', value: 'duplicator' },
+        { name: 'time (interval, time outs, etc)', value: 'time' },
       ],
     },
   ]);
