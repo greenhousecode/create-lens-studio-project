@@ -9,7 +9,7 @@ function replacer(key, value) {
 export default function (...args) {
   const arrayOfStrings = [...args].map((arg) => {
     if (typeof arg === 'object') {
-      if (arg instanceof vec3) return arg.toString();
+      if (arg instanceof vec3 || arg instanceof vec2 || arg instanceof vec4) return arg.toString();
       return JSON.stringify(arg, replacer, 4);
     }
 
