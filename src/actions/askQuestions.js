@@ -1,5 +1,5 @@
 const os = require('os');
-const { prompt, Separator } = require('inquirer');
+const { prompt } = require('inquirer');
 const { join } = require('path');
 const chalk = require('chalk');
 
@@ -10,7 +10,21 @@ const DEFAULTS = {
   stages: ['prod'],
 };
 
-const emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+
+const classes = [
+  { name: 'Button (Add tap listener to Scene Objects)', value: 'classes/Button' },
+  { name: 'Audio Manager (for managing audio Assets)', value: 'classes/AudioManager' },
+  { name: 'Texture Manager (for managing texture Assets)', value: 'classes/TextureManager' },
+  { name: 'Prefab Manager (for managing prefab Assets)', value: 'classes/PrefabManager' },
+  { name: 'State Machine (for complex, multi staged lenses)', value: 'classes/StateMachine' },
+];
+
+const helpers = [
+  { name: 'console (for logging stuff)', value: 'helpers/console' },
+  { name: 'duplicator (clone scene objects or prefabs)', value: 'helpers/duplicator' },
+  { name: 'time (interval, time outs, etc)', value: 'helpers/time' },
+];
 
 module.exports = async (input) => {
   const cwd = input.match(/^\//) ? input : join(process.cwd(), input);
@@ -30,7 +44,7 @@ module.exports = async (input) => {
     {
       name: 'email',
       type: 'input',
-      message: "What's your email adress?",
+      message: "What's your email?",
       filter,
       validate: (email) => (!!email && emailRegex.test(email)) || 'Please provide your email',
     },
@@ -46,7 +60,7 @@ module.exports = async (input) => {
     {
       name: 'description',
       type: 'input',
-      message: 'Please provide one line describing your Lens:',
+      message: 'Please provide a one-liner describing your Lens:',
       default: '3D moustaches for everyone!',
       filter,
     },
@@ -57,24 +71,23 @@ module.exports = async (input) => {
       filter,
     },
     {
-      name: 'additions',
+      name: 'classes',
       type: 'checkbox',
-      message: 'Which modules would you like to in?',
+      message: 'Which classes would you like to import?',
       when: ({ includeCommonlyUsedCode }) => includeCommonlyUsedCode,
-      choices: [
-        new Separator('----- Classes -----'),
-        { name: 'Button', value: 'button' },
-        { name: 'Audio Manager (for managing audio Assets)', value: 'audioManager' },
-        { name: 'Texture Manager (for managing texture Assets)', value: 'textureManager' },
-        { name: 'Prefab Manager (for managing prefab Assets)', value: 'prefabManager' },
-        { name: 'State Machine (for complex, multi staged lenses)', value: 'stateMachine' },
-        new Separator('----- Helpers -----'),
-        { name: 'console (for logging stuff)', value: 'console' },
-        { name: 'duplicator (clone scene objects or prefabs)', value: 'duplicator' },
-        { name: 'time (interval, time outs, etc)', value: 'time' },
-      ],
+      choices: classes,
+    },
+    {
+      name: 'helpers',
+      type: 'checkbox',
+      message: 'Which helpers would you like to import?',
+      when: ({ includeCommonlyUsedCode }) => includeCommonlyUsedCode,
+      choices: helpers,
     },
   ]);
 
   return { ...DEFAULTS, ...answers, appName, cwd };
 };
+
+module.exports.classes = classes;
+module.exports.helpers = helpers;

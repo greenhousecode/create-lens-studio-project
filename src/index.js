@@ -4,11 +4,8 @@ const app = require('commander');
 const boxen = require('boxen');
 const chalk = require('chalk');
 const clear = require('clear');
-require('promise.allsettled').shim();
-
 const installDependencies = require('./actions/installDependencies');
 const { version, description } = require('../package.json');
-const deleteProject = require('./actions/deleteProject');
 const askQuestions = require('./actions/askQuestions');
 const deleteFolder = require('./actions/deleteFolder');
 const createFiles = require('./actions/createFiles');
@@ -65,23 +62,18 @@ console.log(
 
 (async () => {
   let answers;
-  let project;
 
   try {
     answers = await askQuestions(input);
     await createFiles(answers);
     await installDependencies(answers);
 
-    if (answers.includeCommonlyUsedCode && answers.additions.length > 0) {
-      await addCommonlyUsedCode(answers);
-    }
-
     console.log(chalk.bold.green('\nAll finished!'));
     process.exit(0);
   } catch (err) {
     console.log(chalk.red(`\nSomething went wrong (${err.message}):`));
     console.log(err.description || err);
-    await Promise.allSettled([deleteProject(answers, project), deleteFolder(answers)]);
+    await deleteFolder(answers);
     process.exit(1);
   }
 })();

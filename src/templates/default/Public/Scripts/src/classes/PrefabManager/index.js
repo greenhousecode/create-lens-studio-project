@@ -1,15 +1,11 @@
 import console from '../../helpers/console';
 
-const getPrefabFileName = ({ name: path }) =>
-  path
-    .split('/')
-    .pop()
-    .split('.')[0];
+const getPrefabFileName = ({ name: path }) => path.split('/').pop().split('.')[0];
 
 export default class PrefabManager {
   constructor(prefabs = []) {
     this.prefabs = prefabs
-      .filter(file => file)
+      .filter((file) => file)
       .reduce((acc, prefab) => {
         const name = getPrefabFileName(prefab);
 
@@ -20,5 +16,5 @@ export default class PrefabManager {
       }, {});
   }
 
-  find = name => this.prefabs[name];
+  find = (name) => this.prefabs[name];
 }

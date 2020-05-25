@@ -1,15 +1,11 @@
 import console from '../../helpers/console';
 
-const getAudioFileName = ({ name: path }) =>
-  path
-    .split('/')
-    .pop()
-    .split('.')[0];
+const getAudioFileName = ({ name: path }) => path.split('/').pop().split('.')[0];
 
 export default class AudioManager {
   constructor({ audioFiles, volume }) {
     this.audio = audioFiles
-      .filter(file => file)
+      .filter((file) => file)
       .reduce((acc, audioFile) => {
         const name = getAudioFileName(audioFile);
         const sceneObject = global.scene.createSceneObject(name);
@@ -24,5 +20,5 @@ export default class AudioManager {
       }, {});
   }
 
-  find = name => this.audio[name];
+  find = (name) => this.audio[name];
 }

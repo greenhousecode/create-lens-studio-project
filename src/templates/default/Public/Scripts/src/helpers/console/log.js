@@ -6,8 +6,8 @@ function replacer(key, value) {
   return value;
 }
 
-export default function(...args) {
-  const arrayOfStrings = [...args].map(arg => {
+export default function (...args) {
+  const arrayOfStrings = [...args].map((arg) => {
     if (typeof arg === 'object') {
       if (arg instanceof vec3) return arg.toString();
       return JSON.stringify(arg, replacer, 4);

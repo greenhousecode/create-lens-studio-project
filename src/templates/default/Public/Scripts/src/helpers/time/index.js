@@ -8,7 +8,7 @@ export const setTimeout = (func, delay) => {
   return event;
 };
 
-export const clearTimeout = timeout => {
+export const clearTimeout = (timeout) => {
   timeout.enabled = false;
 };
 
@@ -26,6 +26,6 @@ export const setInterval = (func, interval) => {
   return event;
 };
 
-export const clearInterval = interval => {
+export const clearInterval = (interval) => {
   interval.enabled = false;
 };

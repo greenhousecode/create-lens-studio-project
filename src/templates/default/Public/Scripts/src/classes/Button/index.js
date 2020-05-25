@@ -18,8 +18,8 @@ export default class Button {
 
     touchComponent.addMeshVisual(meshVisual);
 
-    targetScript.createEvent('TouchStartEvent').bind(data => {
-      this.callbacks.forEach(callback => {
+    targetScript.createEvent('TouchStartEvent').bind((data) => {
+      this.callbacks.forEach((callback) => {
         if (typeof callback === 'function') callback(data);
       });
     });
@@ -27,7 +27,7 @@ export default class Button {
     this.reset();
   }
 
-  setTexture = texture => {
+  setTexture = (texture) => {
     const imageComponent = getOrAddComponent(this.sceneObject, 'Component.Image');
     imageComponent.mainPass.baseTex = texture;
     return this;
@@ -38,7 +38,7 @@ export default class Button {
     return this;
   };
 
-  onTap = callback => {
+  onTap = (callback) => {
     this.callbacks.push(callback);
     return this;
   };

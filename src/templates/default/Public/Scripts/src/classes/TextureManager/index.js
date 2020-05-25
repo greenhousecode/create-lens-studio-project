@@ -10,8 +10,8 @@ export default class TextureManager {
     }, {});
   }
 
-  find = toBeFound => {
-    const [match] = Object.keys(this.textures).filter(name => name.includes(toBeFound));
+  find = (toBeFound) => {
+    const [match] = Object.keys(this.textures).filter((name) => name.includes(toBeFound));
     return match ? this.textures[match] : null;
   };
 }

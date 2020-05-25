@@ -9,7 +9,7 @@ import { BUILD_PATH, SOURCE_PATH, VARIABLES_PATH } from './global.config';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const getVariables = id => {
+const getVariables = (id) => {
   try {
     const sourcePath = SOURCE_PATH.replace('./', '');
     const variablesPath = VARIABLES_PATH.replace('./', '');
@@ -42,7 +42,7 @@ const createConfigPerFile = () => {
     );
   }
 
-  return entries.map(location => {
+  return entries.map((location) => {
     const fileName = location.match(/\w+\.js/)[0];
 
     return {

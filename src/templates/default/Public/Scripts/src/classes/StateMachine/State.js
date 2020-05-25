@@ -34,7 +34,7 @@ export default class State {
 
   stateCount = () => Object.keys(this.states).length;
 
-  addTransitionConfig = config => {
+  addTransitionConfig = (config) => {
     const transitionObj = new StateTransition(this, config);
     if (transitionObj.checkOnUpdate) {
       this.updateTransitions.push(transitionObj);
@@ -66,6 +66,6 @@ export default class State {
 
   addSimpleSignalTransition = (nextStateName, signalString, _config) => {
     const config = _config || {};
-    this.addSignalTransition(nextStateName, s => s === signalString, config);
+    this.addSignalTransition(nextStateName, (s) => s === signalString, config);
   };
 }

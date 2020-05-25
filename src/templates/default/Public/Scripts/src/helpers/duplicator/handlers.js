@@ -1,6 +1,6 @@
 import console from '../console';
 
-const isSceneObject = input => input.getTypeName() === 'SceneObject';
+const isSceneObject = (input) => input.getTypeName() === 'SceneObject';
 
 const getScene = (input, { newParent }) => {
   if (newParent && isSceneObject(newParent)) return newParent;

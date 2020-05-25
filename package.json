@@ -7,7 +7,7 @@
     "src"
   ],
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .eslintignore .",
     "format": "prettier --ignore-path .gitignore --check '**/*.{css,graphql,html,json,md,scss}'",
     "prepublishOnly": "yarn lint && yarn format"
   },
@@ -43,14 +43,12 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "boxen": "^4.2.0",
     "chalk": "^4.0.0",
     "clear": "^0.1.0",
     "commander": "^5.0.0",
-    "gitlab": "^14.2.2",
     "inquirer": "^7.1.0",
-    "promise.allsettled": "^1.0.2",
-    "request": "^2.88.2",
     "rimraf": "^3.0.2",
     "simple-git": "^1.132.0"
   }
