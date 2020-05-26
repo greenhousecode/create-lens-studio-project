@@ -1,5 +1,5 @@
 {
-  "name": "create-meh-app",
+  "name": "create-lens-studio-project",
   "version": "1.0.0",
   "description": "Quickly scaffolds a new Lens Studio project by setting up ES6, linting, formatting, building tools and providing commonly used code.",
   "bin": "src/index.js",

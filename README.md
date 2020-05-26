@@ -30,10 +30,6 @@ yarn create lens-studio-project <lens-name>
 - Lints (and formats), and attempts to autofix your staged (`.js`) files through [ESLint](https://eslint.org/) (extending [Airbnb](https://github.com/airbnb/javascript#readme) and [Prettier](https://prettier.io/))
 - Formats and attempts to autoformat your staged (`.json`, `.md`) files through Prettier
 
-### `pre-push` git hook
-
-- Runs `yarn test`
-
 ## Recommended Visual Studio Code settings
 
 ### Extensions

@@ -54,6 +54,9 @@ const createConfigPerFile = () => {
         name: location.replace(SOURCE_PATH, ''),
         format: 'iife',
       },
+      watch: {
+        include: '/Public/scripts/src',
+      }
     };
   });
 };
