@@ -38,7 +38,7 @@
       "yarn lint --fix",
       "git add"
     ],
-    "*.{css,graphql,html,json,md,scss,yml}": [
+    "*.{json,md}": [
       "yarn format --write",
       "git add"
     ]
