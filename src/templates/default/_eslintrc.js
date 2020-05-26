@@ -16,8 +16,7 @@ const globals = {
 };
 
 module.exports = {
-  extends: ['airbnb-base', 'prettier'],
-  plugins: ['prettier'],
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
   parser: 'babel-eslint',
   globals,
   rules: {
