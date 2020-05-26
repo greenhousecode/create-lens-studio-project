@@ -7,7 +7,7 @@ import resolve from 'rollup-plugin-node-resolve';
 
 import { BUILD_PATH, SOURCE_PATH, VARIABLES_PATH } from './global.config';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.ROLLUP_WATCH !== 'true';
 
 const getVariables = (id) => {
   try {

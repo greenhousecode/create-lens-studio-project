@@ -1,7 +1,7 @@
 {
   "name": "create-lens-studio-project",
   "version": "1.0.0",
-  "description": "Quickly scaffolds a new Lens Studio project by setting up ES6, linting, formatting, building tools and providing commonly used code.",
+  "description": "Quickly scaffolds a new Lens Studio project in Node.js by setting up linting, formatting, and building tools.",
   "bin": "src/index.js",
   "files": [
     "src"
@@ -49,7 +49,6 @@
     "clear": "^0.1.0",
     "commander": "^5.0.0",
     "inquirer": "^7.1.0",
-    "rimraf": "^3.0.2",
-    "simple-git": "^1.132.0"
+    "rimraf": "^3.0.2"
   }
 }

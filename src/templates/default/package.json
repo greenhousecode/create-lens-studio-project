@@ -1,11 +1,8 @@
 {
   "private": true,
   "name": "{{projectName}}",
-  "description": "AR game hide and seek",
   "version": "1.0.0",
   "author": "{{author}}",
-  "license": "ISC",
-  "main": "src/script.js",
   "scripts": {
     "start": "rollup -c -w",
     "build": "NODE_ENV=production rollup -c",

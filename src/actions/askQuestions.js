@@ -67,7 +67,7 @@ module.exports = async (input) => {
     {
       name: 'includeCommonlyUsedCode',
       type: 'confirm',
-      message: 'Do you want to include commonly used code?',
+      message: 'Do you want to include commonly used code? (like the console, State Machine, ...)',
       filter,
     },
     {

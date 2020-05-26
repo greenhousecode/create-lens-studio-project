@@ -1,6 +1,6 @@
 # Create Lens Studio Project
 
-> Quickly scaffolds a new Node.js project by setting up linting, formatting, and building tools.
+> Quickly scaffolds a new Lens Studio project in Node.js by setting up linting, formatting, and building tools.
 
 ## Usage
 
