@@ -52,9 +52,8 @@ module.exports = async (input) => {
       name: 'projectName',
       type: 'input',
       message: "What's the name of your Lens?",
-      default: () =>
-        appName.replace(/-/g, ' ').replace(/^[a-z]| [a-z]/g, (match) => match.toUpperCase()),
-      filter,
+      default: () => filter(appName).replace(/ |_/g, '-').toLowerCase(),
+      filter: (text) => filter(text).replace(/ |_/g, '-').toLowerCase(),
       validate: (projectName) => !!projectName || 'Please provide a name',
     },
     {

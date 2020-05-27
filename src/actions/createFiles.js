@@ -15,12 +15,12 @@ module.exports = (answers) => {
   const now = new Date();
   const variant = 'none';
 
-  const { projectName, name, email } = answers;
+  const { projectName, username, email } = answers;
 
   const data = {
     ...answers,
     projectName,
-    author: `${name} <${email}>`,
+    author: `${username} <${email}>`,
     lintScript: LINT_SCRIPTS[variant],
     eslintExtends: ESLINT_EXTENDS[variant],
     year: now.getFullYear(),
