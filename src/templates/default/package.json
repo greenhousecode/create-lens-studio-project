@@ -34,7 +34,7 @@
     "@tweenjs/tween.js": "^18.5.0"
   },
   "lint-staged": {
-    "{{lintStagedGlob}}": [
+    "{*.js}": [
       "yarn lint --fix",
       "git add"
     ],

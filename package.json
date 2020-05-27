@@ -43,7 +43,6 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "babel-eslint": "^10.1.0",
     "boxen": "^4.2.0",
     "chalk": "^4.0.0",
     "clear": "^0.1.0",
