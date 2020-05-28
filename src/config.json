@@ -1,0 +1,10 @@
+{
+  "LINT_SCRIPTS": {
+    "none": "eslint --ignore-path .gitignore Public/scripts/src --fix"
+  },
+  "ESLINT_EXTENDS": {
+    "none": "[\"airbnb-base\", \"plugin:prettier/recommended\"]"
+  },
+  "DEFAULT_DEPENDENCIES": [],
+  "DEFAULT_DEV_DEPENDENCIES": ["husky", "prettier", "lint-staged@9", "eslint-config-prettier"]
+}
