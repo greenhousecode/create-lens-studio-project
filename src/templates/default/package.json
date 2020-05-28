@@ -1,0 +1,51 @@
+{
+  "private": true,
+  "name": "{{projectName}}",
+  "version": "1.0.0",
+  "author": "{{author}}",
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c",
+    "lint": "{{lintScript}}",
+    "format": "prettier --ignore-path .gitignore --check '**/*.{json,md}'"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.5.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "fs": "^0.0.1-security",
+    "glob": "^7.1.4",
+    "moment": "^2.24.0",
+    "prettier": "^1.18.2",
+    "rollup": "^1.16.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.0.0"
+  },
+  "dependencies": {
+    "@tweenjs/tween.js": "^18.5.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "yarn format --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
