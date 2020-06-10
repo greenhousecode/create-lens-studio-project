@@ -1,6 +1,6 @@
 # Create Lens Studio Project
 
-> Quickly scaffolds a new Lens Studio project in Node.js by setting up linting, formatting, and building tools.
+> Quickly scaffolds a new Lens Studio project in Node.js by setting up linting, formatting, and building tools. It makes it easier to organize your code and enable code splitting just like on the web!
 
 ## Prerequisites
 
@@ -43,24 +43,3 @@ yarn create lens-studio-project path/to/my-lens
 
 - Lints (and formats), and attempts to autofix your staged (`.js`) files through [ESLint](https://eslint.org/) (extending [Airbnb](https://github.com/airbnb/javascript#readme) and [Prettier](https://prettier.io/))
 - Formats and attempts to autoformat your staged (`.json`, `.md`) files through Prettier
-
-## Recommended Visual Studio Code settings
-
-### Extensions
-
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-### `settings.json`
-
-```json
-{
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "editor.formatOnSave": true,
-  "prettier.disableLanguages": ["javascript"]
-}
-```
-
-> **Note:** We use `prettier.disableLanguages` to disable Prettier from handling JS files, because ESLint already formats these (using Prettier under the hood).
