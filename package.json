@@ -1,6 +1,6 @@
 {
   "name": "create-lens-studio-project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quickly scaffolds a new Lens Studio project in Node.js by setting up linting, formatting, and building tools.",
   "bin": "src/index.js",
   "files": [

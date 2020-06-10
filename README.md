@@ -2,26 +2,40 @@
 
 > Quickly scaffolds a new Lens Studio project in Node.js by setting up linting, formatting, and building tools.
 
+## Prerequisites
+
+- [NodeJS](https://nodejs.org/en/download/)
+- [Yarn](https://yarnpkg.com/)
+
 ## Usage
+
+Make sure you've got NodeJS and Yarn installed (see links in prerequisites section). Create a new Lens Studio project, or choose an existing one. Open up a terminal in your Lens Studio Project directory and run the following command:
 
 ```shell
 yarn create lens-studio-project <lens-name>
 ```
 
+This will download and run this starter in order to create a new Lens Studio project.
+
 **Examples:**
 
-- `yarn create lens-studio-project my-lens`
-- `yarn create lens-studio-project folder/my-lens`
-- `yarn create lens-studio-project /folder/my-lens`
+```shell
+# Navigate to your Lens Studio directory
+cd path/to/my-lens
+
+# Run the starter
+yarn create lens-studio-project my-lens
+```
+
+```shell
+# Or combine the two commands
+yarn create lens-studio-project path/to/my-lens
+```
 
 ## Features
 
 - [x] Lints & formats `.js` files.
 - [x] Formats `.json` and `.md` files
-
-## Prerequisites
-
-- [Yarn](https://yarnpkg.com/)
 
 ## Functionality
 
