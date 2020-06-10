@@ -21,7 +21,7 @@ This will download and run this starter in order to create a new Lens Studio pro
 
 ```shell
 # Navigate to your Lens Studio directory
-cd path/to/my-lens
+cd path/to
 
 # Run the starter
 yarn create lens-studio-project my-lens
@@ -29,7 +29,7 @@ yarn create lens-studio-project my-lens
 
 ```shell
 # Or combine the two commands
-yarn create lens-studio-project path/to/my-lens
+yarn create lens-studio-project /path/to/my-lens
 ```
 
 ## Features
