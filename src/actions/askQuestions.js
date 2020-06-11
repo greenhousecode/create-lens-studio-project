@@ -85,6 +85,10 @@ module.exports = async (input) => {
     },
   ]);
 
+  // Provide default values
+  answers.classes = answers.classes || [];
+  answers.helpers = answers.helpers || [];
+
   return { ...DEFAULTS, ...answers, appName, cwd };
 };
 
