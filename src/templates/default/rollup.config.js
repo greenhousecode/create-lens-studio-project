@@ -1,9 +1,9 @@
 import fs from 'fs';
 import glob from 'glob';
 import json from 'rollup-plugin-json';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 
 import { BUILD_PATH, SOURCE_PATH, VARIABLES_PATH } from './global.config';
 
