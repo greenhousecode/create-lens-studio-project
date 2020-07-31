@@ -25,8 +25,8 @@ const pluginsDevelop = [
   json(),
   babel({
     babelrc: false,
-    presets: [['@babel/env', { modules: false }]],
-    plugins: ['@babel/plugin-proposal-class-properties', 'array-includes'],
+    presets: [['@babel/preset-env', { targets: '> 0.25%, not dead' }]],
+    plugins: ['@babel/plugin-proposal-class-properties'],
   }),
 ];
 const pluginsProduction = [terser({ output: { comments: 'all' } })];
