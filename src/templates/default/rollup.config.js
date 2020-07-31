@@ -1,9 +1,9 @@
 import fs from 'fs';
 import glob from 'glob';
 import json from 'rollup-plugin-json';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 
 import { BUILD_PATH, SOURCE_PATH, VARIABLES_PATH } from './global.config';
 
@@ -25,11 +25,10 @@ const pluginsDevelop = [
   json(),
   babel({
     babelrc: false,
-    presets: [['@babel/env', { modules: false }]],
+    presets: [['@babel/preset-env', { targets: '> 0.25%, not dead' }]],
     plugins: ['@babel/plugin-proposal-class-properties'],
   }),
 ];
-
 const pluginsProduction = [terser({ output: { comments: 'all' } })];
 
 const createConfigPerFile = () => {
@@ -55,8 +54,8 @@ const createConfigPerFile = () => {
         format: 'iife',
       },
       watch: {
-        include: '/Public/scripts/src',
-      }
+        exclude: BUILD_PATH,
+      },
     };
   });
 };
