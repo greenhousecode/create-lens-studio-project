@@ -26,10 +26,9 @@ const pluginsDevelop = [
   babel({
     babelrc: false,
     presets: [['@babel/env', { modules: false }]],
-    plugins: ['@babel/plugin-proposal-class-properties'],
+    plugins: ['@babel/plugin-proposal-class-properties', 'array-includes'],
   }),
 ];
-
 const pluginsProduction = [terser({ output: { comments: 'all' } })];
 
 const createConfigPerFile = () => {
@@ -55,8 +54,8 @@ const createConfigPerFile = () => {
         format: 'iife',
       },
       watch: {
-        include: '/Public/scripts/src',
-      }
+        exclude: BUILD_PATH,
+      },
     };
   });
 };
